@@ -25,7 +25,6 @@ public class RelativeMovementManager : IMovementManager
 		
 		if(command.TestButton(MovementCommand.ActionFlags.Jump))
 		{
-			Debug.Log("Jump!");
 			body.Jump();
 		}
 	}	
