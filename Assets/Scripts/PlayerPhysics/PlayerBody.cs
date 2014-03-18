@@ -11,10 +11,17 @@ public class PlayerBody : MonoBehaviour
 	public CameraType m_cameraMode;
 	private IMovementManager m_movementManager;
 	
+	[SerializeField]
+	private Camera m_innerCamera;
+	[SerializeField]
+	private Camera m_externalCamera;	
+	private Vector3 m_externalCameraOffset;
+	
+	
 	public enum InputType
 	{
 		Keyboard = 0,
-		Touchscreen,
+		Touchscreen
 	} 
 	public InputType m_inputMode;
 	private IInputHandler m_inputHandler;
@@ -27,14 +34,21 @@ public class PlayerBody : MonoBehaviour
 		{
 		case CameraType.Relative :
 				m_movementManager = new RelativeMovementManager();
+				m_externalCamera.gameObject.SetActive(false);
+				m_innerCamera.gameObject.SetActive(true);
 				break;
 		case CameraType.Absolute :
-				//TODO absolute movement manager
-				break;
+				m_movementManager = new RelativeMovementManager();
+				m_externalCamera.gameObject.SetActive(true);
+				m_innerCamera.gameObject.SetActive(false);				
+			break;
 			default:
 				throw new MissingComponentException("Can't decode camera mode : " + m_cameraMode);
-				break;
 		}
+		
+		Debug.Log("Now inner camera is ("+m_innerCamera.gameObject.activeSelf+") and outer camera is ("+m_externalCamera.gameObject.activeSelf+")");
+		
+		m_externalCameraOffset = m_externalCamera.gameObject.transform.position - this.gameObject.transform.position;
 		
 		switch(m_inputMode)
 		{
@@ -46,7 +60,6 @@ public class PlayerBody : MonoBehaviour
 				break;
 			default:
 				throw new MissingComponentException("Can't decode camera mode : " + m_cameraMode);
-				break;
 		}
 	}
 	
@@ -60,6 +73,11 @@ public class PlayerBody : MonoBehaviour
 	 		float timeElapsed = Time.deltaTime;
 	 		this.rigidbody.MovePosition(this.rigidbody.position + new Vector3(0, m_currJumpSpeed*timeElapsed, 0));
 	 		m_currJumpSpeed -= timeElapsed*m_gravityOnPlayer;
+	 	}
+	 	
+	 	if(m_externalCamera.gameObject.activeSelf)
+	 	{
+	 		m_externalCamera.transform.position = this.gameObject.transform.position + m_externalCameraOffset;
 	 	}
 	}
 
