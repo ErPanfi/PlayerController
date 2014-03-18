@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using System.Collections;
 
-[CustomPropertyDrawer(typeof(PlayerBody))]
+[CustomEditor(typeof(PlayerBody))]
 public class PlayerInspector : Editor 
 {
 	private PlayerBody m_body;
