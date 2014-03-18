@@ -18,7 +18,7 @@ public class PlayerBody : MonoBehaviour
 	} 
 	public InputType m_inputMode;
 	private IInputHandler m_inputHandler;
-
+	
 	public void Start()
 	{
 		switch (m_cameraMode) 
@@ -54,6 +54,7 @@ public class PlayerBody : MonoBehaviour
 	 	m_movementManager.ApplyCommandOnPlayer(this, m_inputHandler.ParseInputForCommands());
 	}
 
+	[SerializeField]
 	private float m_rotAcceleration;
 	public float RotAcceleration
 	{
@@ -63,6 +64,7 @@ public class PlayerBody : MonoBehaviour
 		}
 	}
 	
+	[SerializeField]
 	private float m_linearAcceleration;
 	public float LinearAcceleration
 	{
