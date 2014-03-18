@@ -1,13 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Utils\FlagsHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerPhysics\PlayerBody.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementManager.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\PlayerPhysics\InputHandlers\PhysicalInputHandler.cs" Line="32" Column="3" />
-      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementCommand.cs" Line="62" Column="31" />
-      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\RelativeMovementManager.cs" Line="9" Column="4" />
-      <File FileName="Assets\Scripts\PlayerPhysics\PlayerBody.cs" Line="39" Column="17" />
-      <File FileName="Assets\Scripts\Utils\FlagsHelper.cs" Line="13" Column="47" />
+      <File FileName="Assets\Scripts\PlayerPhysics\PlayerBody.cs" Line="114" Column="18" />
+      <File FileName="Assets\Scripts\Editor\PlayerInspector.cs" Line="7" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

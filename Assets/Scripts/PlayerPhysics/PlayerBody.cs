@@ -71,6 +71,11 @@ public class PlayerBody : MonoBehaviour
 		{
 			return m_rotAcceleration;
 		}
+		
+		 set
+		{
+			m_rotAcceleration = value;
+		}
 	}
 	
 	[SerializeField]
@@ -81,14 +86,46 @@ public class PlayerBody : MonoBehaviour
 		{
 			return m_linearAcceleration;
 		}
+		
+		 set
+		{
+			m_linearAcceleration = value;
+		}
 	}
 	
 	[SerializeField]
 	private Collider m_solidGroundCollider;
 	[SerializeField]
 	private float m_initialJumpAcceleration = 3.0f;
+
+	public float InitialJumpAcceleration 
+	{
+		get 
+		{
+			return m_initialJumpAcceleration;
+		}
+		
+		 set 
+		{
+			m_initialJumpAcceleration = value;
+		}
+	}
+
 	[SerializeField]
 	private float m_gravityOnPlayer = 1.0f;
+
+	public float GravityOnPlayer 
+	{
+		get 
+		{
+			return m_gravityOnPlayer;
+		}
+		
+		 set 
+		{
+			m_gravityOnPlayer = value;
+		}
+	}
 	
 	private bool m_isJumping;
 	private float m_currJumpSpeed;

@@ -9,8 +9,6 @@ public class PhysicalInputHandler : IInputHandler
 	public const string BACK_FORWARD_AXIS_NAME = "Vertical";
 	public const string JUMP_AXIS_NAME = "Jump";
 	
-	ActionFlags m_resetButtonsMask;
-	
 	public MovementCommand ParseInputForCommands ()
 	{
 		MovementCommand movCommand = new MovementCommand ();
@@ -20,14 +18,9 @@ public class PhysicalInputHandler : IInputHandler
 		movCommand.FrontAxis = Input.GetAxis (BACK_FORWARD_AXIS_NAME);
 
 				
-		if(Input.GetAxis(JUMP_AXIS_NAME) > 0 && !FlagsHelper.TestFlag(m_resetButtonsMask, ActionFlags.Jump))
+		if(Input.GetAxis(JUMP_AXIS_NAME) > 0)
 		{
 			movCommand.AddButton(ActionFlags.Jump);
-			FlagsHelper.SetFlag(ref m_resetButtonsMask, ActionFlags.Jump);
-		}
-		else
-		{
-			FlagsHelper.UnsetFlag(ref m_resetButtonsMask, ActionFlags.Jump);
 		}
 		
 		return movCommand;
