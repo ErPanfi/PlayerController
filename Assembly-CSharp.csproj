@@ -49,8 +49,9 @@
      <Compile Include="Assets\Scripts\PlayerPhysics\InputHandlers\IInputHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerPhysics\InputHandlers\PhysicalInputHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerPhysics\PlayerBody.cs" />
+     <Compile Include="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\AbsoluteMovementManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\IMovementManager.cs" />
      <Compile Include="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementCommand.cs" />
-     <Compile Include="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementManager.cs" />
      <Compile Include="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\RelativeMovementManager.cs" />
      <Compile Include="Assets\Scripts\Utils\FlagsHelper.cs" />
   </ItemGroup>

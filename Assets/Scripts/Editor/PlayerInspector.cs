@@ -26,7 +26,7 @@ public class PlayerInspector : Editor
 		m_body.GravityOnPlayer = EditorGUILayout.FloatField( "Gravità soggettiva", m_body.GravityOnPlayer);
 		EditorGUILayout.Space();
 		EditorGUILayout.LabelField("Settaggi camera");
-		EditorGUILayout.EnumPopup("Modalità", m_body.m_cameraMode);
+		m_body.m_cameraMode = (PlayerBody.CameraType)EditorGUILayout.EnumPopup("Modalità", m_body.m_cameraMode);
 	}
 
 }

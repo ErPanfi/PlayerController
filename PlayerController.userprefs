@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerPhysics\PlayerBody.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementCommand.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerPhysics\PlayerBody.cs" Line="114" Column="18" />
-      <File FileName="Assets\Scripts\Editor\PlayerInspector.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\PlayerPhysics\PlayerBody.cs" Line="186" Column="1" />
+      <File FileName="Assets\Scripts\Editor\PlayerInspector.cs" Line="29" Column="44" />
+      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\AbsoluteMovementManager.cs" Line="8" Column="3" />
+      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\RelativeMovementManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerPhysics\PlayerCommandHandling\MovementCommand.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
