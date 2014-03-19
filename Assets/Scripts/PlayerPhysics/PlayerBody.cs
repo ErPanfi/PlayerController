@@ -17,6 +17,22 @@ public class PlayerBody : MonoBehaviour
 	private Camera m_externalCamera;	
 	private Vector3 m_externalCameraOffset;
 	
+	public Camera ActiveCamera
+	{
+		get
+		{
+			switch(m_cameraMode)
+			{
+				case CameraType.Absolute:
+					return m_externalCamera;
+				case CameraType.Relative:
+					return m_innerCamera;
+				default:
+					throw new MissingComponentException("Can't decode camera mode : " + m_cameraMode);
+			}
+		}
+	}
+	
 	
 	public enum InputType
 	{
@@ -38,7 +54,7 @@ public class PlayerBody : MonoBehaviour
 				m_innerCamera.gameObject.SetActive(true);
 				break;
 		case CameraType.Absolute :
-				m_movementManager = new RelativeMovementManager();
+				m_movementManager = new AbsoluteMovementManager();
 				m_externalCamera.gameObject.SetActive(true);
 				m_innerCamera.gameObject.SetActive(false);				
 			break;
@@ -65,12 +81,12 @@ public class PlayerBody : MonoBehaviour
 	
 	public void Update()
 	{
+		float timeElapsed = Time.deltaTime;
 		//parse input and apply command on player
-	 	m_movementManager.ApplyCommandOnPlayer(this, m_inputHandler.ParseInputForCommands());
+	 	m_movementManager.ApplyCommandOnPlayer(this, m_inputHandler.ParseInputForCommands(), timeElapsed);
 	 	
 		if(m_isJumping)
 	 	{
-	 		float timeElapsed = Time.deltaTime;
 	 		this.rigidbody.MovePosition(this.rigidbody.position + new Vector3(0, m_currJumpSpeed*timeElapsed, 0));
 	 		m_currJumpSpeed -= timeElapsed*m_gravityOnPlayer;
 	 	}

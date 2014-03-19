@@ -30,6 +30,14 @@ public class MovementCommand
 			m_lateralAxis = value;
 		}
 	}
+	
+	public bool HasMovement
+	{
+		get
+		{
+			return m_frontAxis != 0 || m_lateralAxis != 0;
+		}
+	}
 
 	//ACTIONS BITMASK
 	public enum ActionFlags
